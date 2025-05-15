@@ -1,18 +1,25 @@
 package org.tawhid.vca.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Room {
-    private int id;
+    private String id;
     private Set<String> participants = new HashSet<>();
 
-    public Room(int id){
+    public Room(String id){
         this.id = id;
     }
+
+
+
     public boolean addParticipant(String userID){
         return participants.add(userID);
 
